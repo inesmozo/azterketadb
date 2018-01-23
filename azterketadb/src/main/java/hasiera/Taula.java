@@ -48,13 +48,15 @@ public class Taula extends JFrame {
 				if(errenkada==-1) {
 					errenkada = table.getRowCount()-1;
 				}
-				
+				try{
 				Lag emaitza = MyTableModel.errenkadaAtera(errenkada);
 				MyTableModel2.addRow(emaitza);
-				try{
-					int tamaina = table.getRowCount()-2;
+				
+				
+				
+					int tamaina = table.getRowCount()-1;
 					MyTableModel.borratu(errenkada);
-					table.setRowSelectionInterval(tamaina,tamaina);
+				//	table.setRowSelectionInterval(tamaina,tamaina);
 				}
 					catch(Exception a){
 						System.out.println("Ez dago borratzeko gehiagorik");
@@ -64,16 +66,19 @@ public class Taula extends JFrame {
 	
 	kendu.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e){
-			int errenkada= table.getSelectedRow();
+			int errenkada= table2.getSelectedRow();
 			if(errenkada==-1) {
-				errenkada = table.getRowCount()-1;
+				errenkada = table2.getRowCount()-1;
 			}
+			try{
 			Lag emaitza = MyTableModel2.errenkadaAtera(errenkada);
 			MyTableModel.addRow(emaitza);
-			try{
-				int tamaina = table2.getRowCount()-2;
+			
+			
+			
+				int tamaina = table2.getRowCount()-1;
 				MyTableModel2.borratu(errenkada);
-				table.setRowSelectionInterval(tamaina,tamaina);
+			//	table.setRowSelectionInterval(tamaina,tamaina);
 			}
 				catch(Exception a){
 					System.out.println("Ez dago borratzeko gehiagorik");

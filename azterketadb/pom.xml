@@ -13,21 +13,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-<pluginRepositories>
-	  <plugin>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<configuration>
-						<archive>
-							<manifest>
-								<mainClass>hasiera.Taula</mainClass>
-							</manifest>
-						</archive>
-						<descriptorRefs>
-							<descriptorRef>jar-with-dependencies</descriptorRef>
-						</descriptorRefs>
-					</configuration>
-	</plugin>
- </pluginRepositories>
+
+	 
+ 
   <dependencies>
    <dependency>
   		<groupId>org.twitter4j</groupId>
@@ -63,4 +51,21 @@
 
   </dependencies>
 
+  <build>
+  	<plugins>
+  		<plugin>
+  			<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>hasiera.Taula</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
